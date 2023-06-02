@@ -108,8 +108,8 @@ namespace projekt_na_ppW
             }
             using (Process proc = new Process())
             {
-                proc.StartInfo.FileName = (truePathsOfFile[listView1.SelectedItems[0].Index]);
-                proc.StartInfo.UseShellExecute = false;
+                proc.StartInfo.FileName =  (truePathsOfFile[listView1.SelectedItems[0].Index]);//("notepad.exe");
+                proc.StartInfo.UseShellExecute = true;
                 proc.StartInfo.RedirectStandardOutput = false;
                 proc.Start();
             }
