@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using System.IO;
 
 namespace projekt_na_ppW
 {
@@ -18,13 +17,9 @@ namespace projekt_na_ppW
         public Form1()
         {
             InitializeComponent();
-            currentFolder = "C:\\"; //zaczynamy nasz program od lokalizacjki dysku C
-            var pog = Directory.GetDirectories(currentFolder);
-            treeView1.Nodes.Add("dysk lokalny c ");
-            TreeNode node = treeView1.Nodes[0];
-            foreach (string path in pog)
+            foreach(var drive in DriveInfo.GetDrives())
             {
-                node.Nodes.Add(path, path.Substring(path.LastIndexOf('\\') + 1)); //dodajemy podstawowe foldery z dysku c
+                treeView1.Nodes.Add(drive.Name, drive.Name);
             }
         }
 

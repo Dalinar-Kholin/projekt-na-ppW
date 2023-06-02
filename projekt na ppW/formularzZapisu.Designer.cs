@@ -37,13 +37,13 @@
             // 
             richTextBox1.Location = new Point(12, 12);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(760, 325);
+            richTextBox1.Size = new Size(760, 338);
             richTextBox1.TabIndex = 0;
             richTextBox1.Text = "";
             // 
             // save
             // 
-            save.Location = new Point(12, 343);
+            save.Location = new Point(12, 356);
             save.Name = "save";
             save.Size = new Size(341, 93);
             save.TabIndex = 1;
@@ -53,7 +53,7 @@
             // 
             // reject
             // 
-            reject.Location = new Point(431, 343);
+            reject.Location = new Point(431, 356);
             reject.Name = "reject";
             reject.Size = new Size(341, 93);
             reject.TabIndex = 2;
