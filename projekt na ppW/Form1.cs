@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.IO;
 
 namespace projekt_na_ppW
 {
@@ -19,7 +20,6 @@ namespace projekt_na_ppW
                 acctListView(this);
             }
         }
-        public List<int> listofIndex { get; set; }
         public List<string> truePathsOfFile { get; set; } = new List<string>();
         public List<string> truePathsOfDir { get; set; } = new List<string>();
         public Form1()
@@ -50,7 +50,7 @@ namespace projekt_na_ppW
                 var txtFiles = Directory.EnumerateFiles(currentFolder, "*");
                 foreach (var f in txtFiles)
                 {
-                    listView1.Items.Add(f);
+                    listView1.Items.Add(f.Substring(f.LastIndexOf('\\') + 1));
                     truePathsOfFile.Add(f);
                 }
             }
@@ -97,6 +97,15 @@ namespace projekt_na_ppW
 
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
+            string path = truePathsOfFile[listView1.SelectedItems[0].Index];
+            string att = path.Substring(path.LastIndexOf('.') + 1);
+            if (att == "txt" || att == "cpp" || att == "csv" || att == "c" || att == "py" || att == "cs") // jakieœ bazowe rozszerzenia plików textowych nie wiem jak to zrobiæ ¿eby samo czyta³o i sprawdza³o czy dany kod jest mo¿liwy do edycji textowej
+            {
+                formularzZapisu window = new formularzZapisu(path);
+                window.Show();
+                return;
+                
+            }
             using (Process proc = new Process())
             {
                 proc.StartInfo.FileName = (truePathsOfFile[listView1.SelectedItems[0].Index]);
