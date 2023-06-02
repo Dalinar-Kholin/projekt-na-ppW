@@ -37,13 +37,13 @@
             // 
             richTextBox1.Location = new Point(12, 12);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(776, 327);
+            richTextBox1.Size = new Size(760, 325);
             richTextBox1.TabIndex = 0;
             richTextBox1.Text = "";
             // 
             // save
             // 
-            save.Location = new Point(12, 345);
+            save.Location = new Point(12, 343);
             save.Name = "save";
             save.Size = new Size(341, 93);
             save.TabIndex = 1;
@@ -53,7 +53,7 @@
             // 
             // reject
             // 
-            reject.Location = new Point(447, 345);
+            reject.Location = new Point(431, 343);
             reject.Name = "reject";
             reject.Size = new Size(341, 93);
             reject.TabIndex = 2;
@@ -65,7 +65,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ClientSize = new Size(784, 461);
             Controls.Add(reject);
             Controls.Add(save);
             Controls.Add(richTextBox1);
